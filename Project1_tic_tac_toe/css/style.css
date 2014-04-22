@@ -17,7 +17,7 @@
 .container{
 
 width:500px;
-margin: 80px auto;
+margin: 80px auto 40px;
 
 }
 
@@ -31,4 +31,12 @@ margin: 80px auto;
 .even {
   background-color: white;
   color:black;
+}
+
+.Xmove{
+	background:blue;
+}
+
+.Omove{
+	background:pink;
 }
