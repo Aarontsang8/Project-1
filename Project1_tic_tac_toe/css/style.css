@@ -1,35 +1,47 @@
 
+body {
+	background-image: url('../images/another.jpg')
+}
 
  .cells { 
 	width:150px;
 	height:150px;
 	border:2px solid black;
 	float:left;
-	font-family: "oswald"; 
-	font-size: 20px;
+	font-family: 'Ruthie', 'cursive';
+	font-weight: bold;
+	font-size: 70px;
 	text-align: center;
-	line-height: 7.5;
+	line-height: 150px;
+	border-top-left-radius: 50px;
+	border-bottom-right-radius: 50px;
 }
 
 
+h1{
+	margin:50px 0px 0px -30px;
+	font-size: 70px;
+	text-align: center;
+	font-family: 'Dancing Script', 'cursive';
 
+}
 
 .container{
 
 width:500px;
-margin: 80px auto 40px;
+margin: 40px auto;
 
 }
 
 
 .odd {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
   color:white;
 }
        
 
 .even {
-  background-color: white;
+  background-color: rgba(255,255,255,0.4);
   color:black;
 }
 
@@ -39,4 +51,9 @@ margin: 80px auto 40px;
 
 .Omove{
 	background:pink;
+}
+
+.wrap {
+	width:960px;
+	margin:0 auto;
 }

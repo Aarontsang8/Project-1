@@ -3,7 +3,7 @@ function TTTController($scope){
 	
 	$scope.incrementer = 0;
 
-
+	
 	var counter = 0;
 	var gameStatus = true;
 	var player;
@@ -14,14 +14,14 @@ winNum = [[0,1,2], [3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]];
      	if (gameStatus == true){
           if ($scope.board[cellIndex] === " "){
                if (counter % 2 == 0){
-                         $scope.board[cellIndex]= "EXES";
+                         $scope.board[cellIndex]= "X";
                          player = "player1";
                          console.log($scope.board[cellIndex]);
                          
                     }
 
                else {
-                    $scope.board[cellIndex]= "OHS";
+                    $scope.board[cellIndex]= "O";
                     player = "player2";
                     console.log($scope.board[cellIndex]);                             
                     }
@@ -47,11 +47,11 @@ winNum = [[0,1,2], [3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]];
          	 //close the if
          	} 
          	else if ($scope.incrementer == 9) {
-         		gameStatus = false;
-         		console.log("fuck u game");
-         		break;
+         		    console.log("TIE");
+         		    alert('THE GAME IS A TIE');
+         		    gameStatus = false;
+         		    break;
          		
-			
          	}
 
     	  } //closes the for loop
@@ -60,12 +60,11 @@ winNum = [[0,1,2], [3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]];
 		}	//closes $scope.clicks
 
 	}//game logic (true false)
+
 //closing curly for TTTcontroller
 }
 
 		
 
-
-//watch $scope.count
 
 
