@@ -15,7 +15,15 @@
 		<h1> XO </h1>
 		<div class = "container">
 			<div class ="cells" x-ng-class-even="'even'" x-ng-class-odd="'odd'"  x-ng-repeat="b in board track by $index" x-ng-click ="clicks($index)">{{b}}</div>
+			 <input type="button" value = "START A NEW GAME" x-ng-click="resetGame();"/>
 		</div>
+		<div id = "p1">Player One Score:</div>
+		<div id = "p2">Player Two Score:</div>
+
+
+               
+
+
 	</div>
 
 

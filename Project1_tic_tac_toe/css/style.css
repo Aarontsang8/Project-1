@@ -1,12 +1,17 @@
 
 body {
-	background-image: url('../images/another.jpg')
+	background-image: url('../images/ironman.jpg');
+	background-size: contain;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+
 }
 
  .cells { 
 	width:150px;
 	height:150px;
-	border:2px solid black;
+	border:4px solid black;
 	float:left;
 	font-family: 'Ruthie', 'cursive';
 	font-weight: bold;
@@ -15,11 +20,11 @@ body {
 	line-height: 150px;
 	border-top-left-radius: 50px;
 	border-bottom-right-radius: 50px;
+	cursor:pointer;
 }
 
 
 h1{
-	margin:50px 0px 0px -30px;
 	font-size: 70px;
 	text-align: center;
 	font-family: 'Dancing Script', 'cursive';
@@ -27,33 +32,73 @@ h1{
 }
 
 .container{
-
+height:500px;
 width:500px;
 margin: 40px auto;
 
 }
 
 
-.odd {
-  background-color: rgba(0, 0, 0, 0.4);
-  color:white;
-}
-       
-
 .even {
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(146, 0, 0, 0.6);
+  color:white;
+   display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.even:hover, .even:focus, .even	:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  cursor:;
+}
+
+
+
+.odd {
+  background-color: rgba(255,255,0,0.5);
   color:black;
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.odd:hover, .odd:focus, .odd:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-.Xmove{
-	background:blue;
-}
 
-.Omove{
-	background:pink;
-}
 
 .wrap {
 	width:960px;
 	margin:0 auto;
 }
+
+#p1, #p2 {
+	background:white;
+	display:inline-block;
+	padding:40px;
+	text-align: center;
+	width:34%;
+	margin-left: 50px;
+	border:4px solid black;
+
+}
+
+
+input[type=button]{
+	background:#ddd;
+	padding:10px;
+	margin-left: 35%;
+}
+
+
