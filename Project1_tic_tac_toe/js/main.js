@@ -1,14 +1,30 @@
-function TTTController($scope){
-  	$scope.board = [" "," "," "," "," "," "," "," "," "];
-  	$scope.incrementer = 0;
-  	var	playerOneScore = 0;
+    var playerOneScore = 0;
     var playerTwoScore = 0;
-  	var counter = 0;
-  	var gameStatus = true;
-  	var player;
+    var counter = 0;
+    var gameStatus = true;
+    var player;
+    var tie;
+
+angular.module('TicApp', ['firebase'])
+    .controller('TTTController',  function ($scope){
+          $scope.board = [" "," "," "," "," "," "," "," "," "];
+          $scope.incrementer = 0;
+ 
 
 
-    
+// function TTTController($scope){
+//   	$scope.board = [" "," "," "," "," "," "," "," "," "];
+//   	$scope.incrementer = 0;
+
+
+        $scope.resetGame = function(){
+            $scope.board = [" "," "," "," "," "," "," "," "," "];
+            $scope.incrementer = 0;
+            counter = 0;
+            gameStatus = true;
+            player = "player 1";
+          }
+
 
 winNum = [[0,1,2], [3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]];
 
@@ -35,15 +51,6 @@ winNum = [[0,1,2], [3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]];
           
        console.log("Current Incrementer" + $scope.incrementer);
 
-            $scope.resetGame = function(){
-                y=confirm("PLAY AGAIN?");
-                if(y==true){
-                    $scope.board = [" "," "," "," "," "," "," "," "," "];
-                    $scope.incrementer = 0;
-                    gameStatus = true;
-                  }
-            }
-
 
 
 	         for (var i = 0; i < 8; i++){
@@ -53,33 +60,31 @@ winNum = [[0,1,2], [3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]];
           	if ($scope.board[winNum[i][0]] == $scope.board[winNum[i][1]] && $scope.board[winNum[i][1]] == $scope.board[winNum[i][2]]) {
           		//this checks to see if the board is currently not empty
           			if($scope.board[winNum[i][0]] != " "){
+                  tie = false;
                alert(player + "  " + " Has Won!");
                    if (player == "player 1") { 
                     	  playerOneScore ++;
-                        document.getElementById('p1').innerHTML = "Player 1 Score: " + playerOneScore;
+                        document.getElementById('p1').innerHTML = "Player One Score: " + playerOneScore;
                      }
 
                      else if (player == "player 2"){
                           playerTwoScore++;
-                          document.getElementById('p2').innerHTML = "Player 2 Score: " + playerTwoScore;
+                          document.getElementById('p2').innerHTML = "Player Two Score: " + playerTwoScore;
                           
                        }     
-                   	console.log("Player 1 Score =" + playerOneScore);
-                    console.log("Player 2 Score =" + playerTwoScore);
-                   	
-                    
-                   
-                    gameStatus = false;
-         	      }       	
-
+                             	console.log("Player 1 Score =" + playerOneScore);
+                              console.log("Player 2 Score =" + playerTwoScore);
+                              gameStatus = false;
+         	       }       	
          	 //close the if
-         	} 
-         	else if ($scope.incrementer == 9) {
-         		    console.log("TIE");         		
-         		    gameStatus = false;
-         		    alert('THE GAME IS A TIE');
-         		    break;
-         	}
+           	} 
+          
+                   	else if ($scope.incrementer == 9 && tie != false) {
+                   		    console.log("TIE");         		
+                   		    gameStatus = false;
+                   		    alert('THE GAME IS A TIE');
+                   		    break;
+                   	}
 
 
 
@@ -93,7 +98,9 @@ winNum = [[0,1,2], [3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]];
 	}//game logic (true false)
 
 //closing curly for TTTcontroller
-}
+// }
+    });
+
 
 
 
