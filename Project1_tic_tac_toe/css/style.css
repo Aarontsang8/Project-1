@@ -1,12 +1,4 @@
 
-body {
-	background-image: url('../images/ironman.jpg');
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-
-}
 
  .cells { 
 	width:150px;
@@ -52,7 +44,7 @@ body {
 .container{
 height:500px;
 width:500px;
-margin: 40px auto;
+margin: 0 auto;
 
 }
 
@@ -117,17 +109,19 @@ margin: 40px auto;
 
 }
 
+#btns{
+	width:33%;
+	margin:0 auto;
+}
 
 input[type=button]{
   background:rgba(153,204,255, 0.9);
   padding:20px;
+  width:150px;
   font-size: 10px;
   font-family: helvetica;
-  margin-left: 33%;
   margin-top:19px;
  }
 
-
-}
 
 

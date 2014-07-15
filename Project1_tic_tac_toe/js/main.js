@@ -21,9 +21,22 @@ angular.module('TicApp', [])
             gameStatus = true;
             player = "Player 1";
             document.getElementById('title').innerHTML = "Next Round!";
-            document.getElementById('dofdof').style.backgroundImage = "";
-            document.getElementById('dofdof').style.border = "";
-            document.getElementById('dofdof').style.zIndex = "";
+          }
+
+         $scope.resetScore = function(){
+            $scope.board = [" "," "," "," "," "," "," "," "," "];
+            incrementer = 0;
+            counter = 0;
+            tie = null;
+            gameStatus = true;
+            player = "Player 1";
+            playerOneScore = 0;
+            playerTwoScore = 0;
+            document.getElementById('p1').innerHTML = "Player One Score: ";
+            document.getElementById('p1').innerHTML = "Player One Score: ";
+            console.log(playerOneScore);
+            console.log(playerTwoScore);
+            document.getElementById('title').innerHTML = "Score has been Reset!";
           }
 
 
@@ -35,8 +48,7 @@ winNum = [[0,1,2], [3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]];
                if (counter % 2 == 0){
                          $scope.board[cellIndex]= "X";
                          player = "Player 1";
-                         console.log($scope.board[cellIndex]);
-                         
+                         console.log($scope.board[cellIndex]);   
                     }
 
                else {
@@ -44,7 +56,6 @@ winNum = [[0,1,2], [3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]];
                     player = "Player 2";
                     console.log($scope.board[cellIndex]);                             
                     }
-
                     counter++;
                     console.log(player);
                     incrementer++;
@@ -60,25 +71,14 @@ winNum = [[0,1,2], [3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]];
               tie = false;
                if (player == "Player 1") { 
                     playerOneScore ++;
-                    document.getElementById('p1').innerHTML = "Player One Score: " + playerOneScore;
-                    document.getElementById('title').innerHTML = "P-1 WINS!";
-                     setTimeout(function(){
-                           document.getElementById('dofdof').style.backgroundImage = "url('images/ironman_test.jpg')";
-                           document.getElementById('dofdof').style.zIndex =1;
-                           document.getElementById('dofdof').style.border= "5px solid black";                
-                    },1500);
+                      document.getElementById('p1').innerHTML = "Player One Score: " + playerOneScore;
+                      document.getElementById('title').innerHTML = "P-1 WINS!";    
                  } //closes if player == player1
 
                  else if (player == "Player 2"){
                       playerTwoScore++;
-
                       document.getElementById('p2').innerHTML = "Player Two Score: " + playerTwoScore;
-                      document.getElementById('title').innerHTML = "P-2 WINS!";
-                      setTimeout(function(){
-                            document.getElementById('dofdof').style.backgroundImage = "url('images/thor.jpg')";
-                            document.getElementById('dofdof').style.zIndex =1;
-                            document.getElementById('dofdof').style.border= "5px solid black";
-                          },1500);                          
+                      document.getElementById('title').innerHTML = "P-2 WINS!";                        
                    }//close else if     
                           console.log("Player 1 Score =" + playerOneScore);
                           console.log("Player 2 Score =" + playerTwoScore);
@@ -91,12 +91,6 @@ winNum = [[0,1,2], [3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]];
                       console.log("TIE");                                      
                       gameStatus = false;
                       document.getElementById('title').innerHTML = "GAME IS TIED";
-                      
-                      setTimeout(function(){
-                            document.getElementById('dofdof').style.backgroundImage = "url('images/tie.jpg')";
-                            document.getElementById('dofdof').style.zIndex =1;
-                            document.getElementById('dofdof').style.border= "5px solid black";
-                              },1500);  
                                            
                 } //closes the else if
 
